@@ -8,9 +8,9 @@ from typing import List
 
 app = FastAPI()
 
-# @app.on_event("startup")
-# def on_startup():
-#     create_db_and_tables()
+@app.on_event("startup")
+def on_startup():
+    create_db_and_tables()
 
 
 @app.get("/users", response_model=List[User])
